@@ -1,0 +1,28 @@
+﻿@model WhalesListViewModel
+
+<h1>Whales</h1>
+<button onclick="AddOrUpdate()">Add Whale</button>
+
+@foreach (var whale in Model.Whales)
+{
+<div class="col-sm-4 col-lg-4 col-md-4 whale" id="@whale.Id">
+    <h3 class="name">@whale.Name</h3>
+    <p>Average Size: <span class="size">@whale.AverageSize.ToString()</span> Ft</p>
+    <p>Diet: <span class="diet">@whale.Diet.ToString()</span></p>
+    <p class="description">@whale.Description</p>
+    <button onclick="AddOrUpdate(@whale.Id)">Edit</button>
+    <button onclick="Delete(@whale.Id)">Delete</button>
+</div>
+}
+
+<div style="display:none;" id="addEditModal">
+    <div class="input"><lable>Whale Name:</lable> <input id="name" type="text" /></div>
+    <div class="input"><label>Whale Average Size: </label> <input id="size" type="number" /></div>
+    <div class="dropdown"><label>Whale Diet: </label> @Html.DropDownListFor(model => model.Diet, Model.Diets, new { id = "diet" })</div>
+    <div class="text-area"><label>Whale Description: </label> <textarea id="description"></textarea></div>
+    <div id="buttons">
+    <button onclick="Save()">Save</button>
+    <button onclick="Cancel()">Cancel</button>
+    </div>
+</div>
+

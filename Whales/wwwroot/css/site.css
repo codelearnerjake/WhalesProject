@@ -1,0 +1,39 @@
+﻿#addEditModal {
+    position: absolute;
+    width: 319px;
+    height: 200px;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #aaa;
+    top: 20%;
+    left: 20%;
+}
+
+.whale {
+    width: 350px;
+    border: 1px solid #bbb;
+    margin: 15px;
+    padding: 0px 5px 10px;
+    border-radius: 5px;
+}
+.input,
+.text-area {
+    display: block;
+    padding-bottom: 15px;
+}
+
+input,
+textarea,
+select {
+    float: right;
+}
+
+#buttons {
+    clear: both;
+    width: 300px
+}
+
+#buttons button {
+    float: right;
+    margin: 10px 0 0 10px
+}
